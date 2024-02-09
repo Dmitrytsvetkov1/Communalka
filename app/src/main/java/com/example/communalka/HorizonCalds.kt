@@ -19,6 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -29,7 +30,7 @@ fun HorizontalCards(name: String, price: String, paint: Painter) {
             .fillMaxWidth()
             .padding(start = 16.dp, top = 8.dp, end = 16.dp, bottom = 8.dp),
         shape = RoundedCornerShape(12.dp),
-        border = BorderStroke(1.dp, color = MaterialTheme.colorScheme.onSecondaryContainer),
+        border = BorderStroke(1.dp, color = MaterialTheme.colorScheme.inversePrimary),
         colors = CardDefaults.cardColors(MaterialTheme.colorScheme.secondaryContainer)
     ) {
         Box(){
@@ -41,10 +42,12 @@ fun HorizontalCards(name: String, price: String, paint: Painter) {
                     Text( //header
                         text = name,
                         fontSize = 16.sp,
+                        color = MaterialTheme.colorScheme.onBackground
                     )
                     Text( //subhead
                         text = price,
-                        fontSize = 28.sp
+                        fontSize = 28.sp,
+                        color = MaterialTheme.colorScheme.onBackground
                     )
                 }
             }
