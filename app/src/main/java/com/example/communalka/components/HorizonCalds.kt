@@ -1,4 +1,4 @@
-package com.example.communalka
+package com.example.communalka.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
