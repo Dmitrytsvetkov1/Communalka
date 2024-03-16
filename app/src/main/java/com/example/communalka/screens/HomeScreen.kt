@@ -1,5 +1,6 @@
 package com.example.communalka.screens
 
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -7,9 +8,13 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.LargeTopAppBar
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
@@ -24,15 +29,16 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import co.yml.charts.common.model.Point
+import com.example.communalka.components.HorizontalCards
 import com.example.communalka.components.LineChart
 import kotlin.random.Random
-
 
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(){
+
 
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
 
@@ -45,7 +51,7 @@ fun HomeScreen(){
             LargeTopAppBar(
                 title = {
                     Text(
-                        text = "Home",
+                        text = "Главная",
                         style = TextStyle(
                             fontSize = 28.sp,
                             color = MaterialTheme.colorScheme.onBackground
@@ -53,6 +59,17 @@ fun HomeScreen(){
                     )
                 }
             )
+        },
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = {},
+                containerColor = MaterialTheme.colorScheme.secondary
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.Add,
+                    contentDescription = "AddFAB"
+                )
+            }
         }
 
     ){ padding ->
@@ -62,7 +79,6 @@ fun HomeScreen(){
                 .padding(padding)
         ){
             item {
-
                 Card (
                     modifier = Modifier
                         .fillMaxWidth()
@@ -78,7 +94,7 @@ fun HomeScreen(){
                 Text(
                     modifier = Modifier
                         .padding(horizontal = 16.dp),
-                    text = "History",
+                    text = "История",
                     style = TextStyle(
                         fontSize = 20.sp,
                         color = MaterialTheme.colorScheme.onBackground
