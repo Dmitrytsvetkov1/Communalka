@@ -150,7 +150,7 @@ fun AddScreen(navController: NavController){
 
 
             }
-            val pattern = Regex("^\\d*\\.?\\d*\$")
+            val pattern = Regex("^\\d*\\.?\\d{0,2}\$")
             Box (
                 modifier = Modifier
                     .fillMaxWidth()
